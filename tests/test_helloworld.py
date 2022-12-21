@@ -12,7 +12,4 @@ class TestHelloWorld:
         print("teardown")
 
     def test_helloworld(self):
-        """
-        One test
-        """
         assert True
