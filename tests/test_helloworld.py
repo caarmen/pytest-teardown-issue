@@ -1,12 +1,18 @@
 """
 Unit tests
 """
+import pytest
 
-from helloworld.helloworld import greeting
 
+class TestHelloWorld:
 
-def test_helloworld():
-    """
-    One test
-    """
-    assert greeting() == "hello world"
+    @pytest.fixture(scope="function", autouse=True)
+    def teardown(self):
+        yield
+        print("teardown")
+
+    def test_helloworld(self):
+        """
+        One test
+        """
+        assert True
